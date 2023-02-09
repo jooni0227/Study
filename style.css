@@ -1,12 +1,23 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("https://media.istockphoto.com/vectors/currency-exchange-dollar-sign-and-circle-arrow-fast-loan-financial-vector-id1190840209?k=20&m=1190840209&s=612x612&w=0&h=TUq_XBajwtIDMy698CLPunhoXhYUzxhma8Xp1m9G8Vw=");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+
 .exchange-box{
     border:1px solid black;
     width:400px;
 }
 
-
-
-.dropbtn {
-    background-color: #4CAF50;
+.dropbtn{
+    background-color: #adf1b4;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -28,7 +39,7 @@
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     width:100%;
   }
@@ -57,7 +68,17 @@
 
   .input-area{
     width:100%;
+    border:none;
+    color:black;
+    text-align:right;
+  }
+  .input-area:focus{
+    outline:none;
   }
   .input-area input{
     width:100%;
+  }
+  .moneyNum{
+    width:100%;
+    color:black;
   }

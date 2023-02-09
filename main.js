@@ -35,12 +35,13 @@ let fromCurrency = 'KRW';
 let toCurrency = 'KRW';
 document.querySelectorAll("#from-currency-list a").forEach(menu=>menu.addEventListener("click",function(){
     //1. 버튼을 가져온다
-     //2. 버튼에 값을 바꾼다
+    //2. 버튼에 값을 바꾼다
     document.getElementById("from-button").textContent=this.textContent
     
     //3. 선택된 currency값을 변수에 저장해준다
     fromCurrency=this.textContent;
-    console.log(fromCurrency);
+    convert("from");
+    moneyNum("from");
 }));
 
 document.querySelectorAll("#to-currency-list a").forEach(menu=>menu.addEventListener("click",function(){
@@ -50,6 +51,39 @@ document.querySelectorAll("#to-currency-list a").forEach(menu=>menu.addEventList
     
     //3. 선택된 currency값을 변수에 저장해준다
     toCurrency=this.textContent;
-    console.log(toCurrency);
+    convert("from");
+    moneyNum("to");
+  
 }));
+
+//1. 키를 입력하는 순간 
+//2. 환전이 되서 
+//3. 환전된 값이 보인다.
+
+function convert(type){
+    //1. 환전
+    //2. 얼마를 환전? 가지고 있는 화폐가 뭔지? 환전할려는 화폐가 뭔지?
+    //3. 돈*환율 = 환전
+    let amount = 0;
+    if(type=="from"){
+        amount = document.getElementById("from-input").value;
+        let convertedAmount = amount*currencyRatio[fromCurrency][toCurrency];
+        document.getElementById("to-input").value=convertedAmount;
+    }
+    else{
+        let amount = document.getElementById("to-input").value;
+        let convertedAmount = amount*currencyRatio[toCurrency][fromCurrency];
+        document.getElementById("from-input").value=convertedAmount;
+    }
+}
+
+//화폐를 고르면 화폐에 맞는 단위 표시
+function moneyNum(type){
+    if(type=="from"){
+        document.getElementById("from-money").textContent=currencyRatio[fromCurrency].unit;
+    }
+    else if(type=="to"){
+        document.getElementById("to-money").textContent=currencyRatio[toCurrency].unit;
+    }
+}
 

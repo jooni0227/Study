@@ -14,12 +14,12 @@
             <div class="dropdown-content" id = "from-currency-list">
               <a href="#">KRW</a>
               <a href="#">USD</a>
-              <a href="#">VND</a>
+              <a href="#">YEN</a>
             </div>
         </div>
         <div class="input-area">
-            <input type="number"/>
-            <div>달러</div>
+            <input type="number" id = "from-input" onkeyup="convert('from')"/>
+            <div id = "from-money" class = "moneyNum">원</div>
         </div>
     </div>
 
@@ -35,8 +35,8 @@
             </div>
         </div>
         <div class="input-area">
-            <input type="number"/>
-            <div>달러</div>
+            <input type="number" id = "to-input" onkeyup="convert('to')"/>
+            <div id = "to-money" class = "moneyNum">원</div>
         </div>
     </div>
     <script src = "main.js"></script>

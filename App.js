@@ -7,7 +7,7 @@ export default function App() {
       <View style= {styles.city}>
         <Text style={styles.cityName}>Busan</Text>
       </View>
-      <View style={styles.weather}>
+      <View style={styles.weather}> //날씨
         <View style={styles.day}>
           <Text style={styles.temp}>27</Text>
           <Text style={styles.description}>Sunny</Text>
